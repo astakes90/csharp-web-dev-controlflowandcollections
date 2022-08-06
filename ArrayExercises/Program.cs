@@ -16,7 +16,6 @@ namespace ArrayExercises
                 }
                 else
                 {
-
                 }
             }
         }
