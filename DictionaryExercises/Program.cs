@@ -9,39 +9,35 @@ namespace DictionaryExercises
         {
             Dictionary<int, string> students = new Dictionary<int, string>();
 
-            int idNum;
+            string newStudent;
 
-            Console.WriteLine("Enter your student ID number (or ENTER to finish):");
+            Console.WriteLine("Enter your students' names and ID numbers (or ENTER to finish):");
 
             // Get student names and grades
             do
             {
-                Console.WriteLine("ID number: ");
-                string input = Console.ReadLine();
-                int changeInputToNum = int.Parse(input);
-                idNum = changeInputToNum;
+                Console.WriteLine("Student Name: ");
+                newStudent = Console.ReadLine();
 
-                if (!Equals(idNum, ""))
+                if (newStudent != "")
                 {
-                    Console.WriteLine("Name of Student: ");
-                    string input2 = Console.ReadLine();
-                    string nameOfStudent = input2;
-
-                    students.Add(idNum, nameOfStudent);
-
-                    // Read in the newline before looping back
-                    
+                    Console.WriteLine("ID: ");
+                    int newID = int.Parse(Console.ReadLine());
+                    students.Add(newID, newStudent);
                 }
 
-            } while (!Equals(idNum, ""));
+            } while (!Equals(newStudent, ""));
 
             // Print class roster
+
             Console.WriteLine("\nClass roster:");
 
             foreach (KeyValuePair<int, string> student in students)
             {
-                Console.WriteLine(student.Key + ": " + student.Value);
+                Console.WriteLine(student.Value + "'s ID: " + student.Key);
             }
+
+            Console.WriteLine("Number of students in roster: " + students.Count);
         }
     }
 }
